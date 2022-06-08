@@ -1,0 +1,92 @@
+<?php
+include 'header.php';
+require 'functions.php';
+
+$data = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_pengadaan", $_GET['kode_pengadaan'], "tb_pengadaan_detail", "tb_pengadaan_detail.kd_pengadaan", "tb_pengadaan_header.kd_pengadaan");
+var_dump($data);
+?>
+
+<!-- Content Wrapper -->
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+
+            <!-- Awal Baris -->
+
+            <div class="row mb-2">
+                <div class="col sm-6">
+                    <h1 class="m-0">HALAMAN Detail Pengadaan Barang</h1>
+                </div>
+                <div class="col sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item active">Halaman Detail Pengadaan Barang</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Tutup Baris -->
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Detail Data Pengadaan Barang</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-body">
+                                <a href="tambah_penagadaan_header.php" class="btn btn-block btn-primary"> Tambah Data Pengadaan Header </a>
+                                <table id="example1" class="table table-bordered table-hover mt-3">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Kode Barang</th>
+                                            <th>Stok Masuk</th>
+                                            <th>Harga Masuk</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($data as $rows) :
+                                        ?>
+                                            <tr>
+                                                <th scope="row"><?= $i; ?></th>
+                                                <td><?= $rows["kd_barang"]; ?></td>
+                                                <td><?= $rows["stok_masuk"]; ?></td>
+                                                <td><?= number_format( $rows["harga_masuk"], 3, '.', '.'); ?></td>
+                                                <td>
+                                                    <a href="detail_pengadaan.php?kode_pengadaan=<?= $rows['kd_pengadaan'] ?>" class="btn btn-primary btn-xs">Tampilkan</a>
+                                                    <a href="ubah_pengadaan.php?kode_pengadaan=<?= $rows['kd_pengadaan'] ?>" class="btn btn-warning btn-xs">Ubah</a>
+                                                    <a href="delete_pengadaan.php?kode_pengadaan=<?= $rows['kd_pengadaan'] ?>" class="btn btn-danger btn-xs">Hapus</a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                            $i++;
+                                        endforeach;
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="heading-1">Last Update : <?= date("h:i:sa - D, d M Y") ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<?php
+include 'footer.php'
+?>

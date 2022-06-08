@@ -68,6 +68,12 @@ function tambah($data, $tabel)
 
     $query = "INSERT INTO $tabel VALUES ('', '$nama_supplier', '$alamat_supplier', '$nomor_telephone')";
     return mysqli_query($conn, $query);
+  } elseif ($tabel === "tb_pengadaan_header") {
+    $kode_supplier = $data["kode_supplier"];
+    $tanggal_masuk = $data["tanggal_masuk"];
+
+    $query = "INSERT INTO $tabel VALUES ('', '$kode_supplier', '$tanggal_masuk')";
+    return mysqli_query($conn, $query);
   }
 }
 
@@ -117,6 +123,17 @@ function ubah($data, $table)
               WHERE kd_supplier='$kode_supplier'";
 
     return mysqli_query($conn, $query);
+  } else if ($table === "tb_pengadaan_header") {
+    $kode_pengadaan = $data["kode_pengadaan"];
+    $kode_supplier = $data["kode_supplier"];
+    $tanggal_masuk = $data["tanggal_masuk"];
+
+    $query = "UPDATE $table SET kd_supplier='$kode_supplier',
+    tanggal_masuk = '$tanggal_masuk'
+    WHERE kd_pengadaan='$kode_pengadaan'";
+
+    return mysqli_query($conn, $query);
+
   }
 }
 
