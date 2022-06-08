@@ -3,7 +3,7 @@ include 'header.php';
 require 'functions.php';
 
 $data = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_pengadaan", $_GET['kode_pengadaan'], "tb_pengadaan_detail", "tb_pengadaan_detail.kd_pengadaan", "tb_pengadaan_header.kd_pengadaan");
-var_dump($data);
+
 ?>
 
 <!-- Content Wrapper -->

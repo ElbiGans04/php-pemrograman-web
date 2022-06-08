@@ -104,12 +104,6 @@
                   <a href="tampil_pengadaan_header.php" class="nav-link">
                   <i class="far fa-clipboard nav-icon"></i>
                   
-                    <p>Pengadaan Header</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="tampil_pengadaan_detail.php" class="nav-link">
-                  <i class="fa-solid fa-clipboard-check nav-icon"></i>
                     <p>Pengadaan</p>
                   </a>
                 </li>
