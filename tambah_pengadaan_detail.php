@@ -28,7 +28,7 @@ $rowsText = join(", ", $rows);
 
 
 $tb_barang = tampilData("tb_barang");
-$query3 = "SELECT * FROM tb_barang WHERE kd_barang NOT IN ($rowsText)";
+$query3 = (count($rows) == 0) ? "SELECT * FROM tb_barang" : "SELECT * FROM tb_barang WHERE kd_barang NOT IN ($rowsText)";
 $result3 = mysqli_query($conn, $query3);
 $tb_barang = [];
 

@@ -2,7 +2,8 @@
 include 'header.php';
 require 'functions.php';
 
-$data = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_pengadaan", $_GET['kode_pengadaan'], "tb_pengadaan_detail", "tb_pengadaan_detail.kd_pengadaan", "tb_pengadaan_header.kd_pengadaan");
+$data1 = detailData("tb_pengadaan_header", "kd_pengadaan", $_GET['kode_pengadaan'])[0];
+$data2 = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_pengadaan", $_GET['kode_pengadaan'], "tb_pengadaan_detail", "tb_pengadaan_detail.kd_pengadaan", "tb_pengadaan_header.kd_pengadaan");
 
 ?>
 
@@ -40,7 +41,7 @@ $data = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_pe
 
                         <div class="card-body">
                             <div class="card-body">
-                                <a href="tambah_pengadaan_detail.php?kode_pengadaan=<?= $data[0]['kd_pengadaan'] ?>" class="btn btn-block btn-primary"> Tambah Data Pengadaan Detail </a>
+                                <a href="tambah_pengadaan_detail.php?kode_pengadaan=<?= $data1['kd_pengadaan'] ?>" class="btn btn-block btn-primary"> Tambah Data Pengadaan Detail </a>
                                 <table id="example1" class="table table-bordered table-hover mt-3">
                                     <thead>
                                         <tr>
@@ -54,7 +55,7 @@ $data = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_pe
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($data as $rows) :
+                                        foreach ($data2 as $rows) :
                                         ?>
                                             <tr>
                                                 <th scope="row"><?= $i; ?></th>
