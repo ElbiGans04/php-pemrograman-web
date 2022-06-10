@@ -4,9 +4,14 @@ include 'header.php';
 require 'functions.php';
 
 if (isset($_POST["submit"])) {
-  if (tambah($_POST, "tb_pengadaan_detail")) {
+  $barang = detailData("tb_barang", "kd_barang", $_POST['kode_barang'])[0];
+  mysqli_begin_transaction($conn);
+  $query = "UPDATE tb_barang SET stok='".($barang['stok'] + $_POST['stok_masuk'])."' WHERE kd_barang ='".$_POST['kode_barang']."'";
+  if (tambah($_POST, "tb_pengadaan_detail") && mysqli_query($conn, $query)) {
+    mysqli_commit($conn);
     echo "<script>alert('Data berhasil ditambahkan !!'); window.location = 'detail_pengadaan.php?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
   } else {
+    mysqli_rollback($conn);
     echo "<script>alert('Data gagal ditambahkan !!'); window.location = 'detail_pengadaan.php?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
   }
 }
