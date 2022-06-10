@@ -74,6 +74,14 @@ function tambah($data, $tabel)
 
     $query = "INSERT INTO $tabel VALUES ('', '$kode_supplier', '$tanggal_masuk')";
     return mysqli_query($conn, $query);
+  } elseif ($tabel === "tb_pengadaan_detail") {
+    $kode_pengadaan = $data["kode_pengadaan"];
+    $kode_barang = $data["kode_barang"];
+    $stok_masuk = $data["stok_masuk"];
+    $harga_masuk = $data["harga_masuk"];
+
+    $query = "INSERT INTO $tabel VALUES ('$kode_pengadaan', '$kode_barang', '$stok_masuk', '$harga_masuk')";
+    return mysqli_query($conn, $query);
   }
 }
 
@@ -131,6 +139,19 @@ function ubah($data, $table)
     $query = "UPDATE $table SET kd_supplier='$kode_supplier',
     tanggal_masuk = '$tanggal_masuk'
     WHERE kd_pengadaan='$kode_pengadaan'";
+
+    return mysqli_query($conn, $query);
+
+  } else if ($table === "tb_pengadaan_detail") {
+    $kode_pengadaan = $data["kode_pengadaan"];
+    $kode_barang = $data["kode_barang"];
+    $stok_masuk = $data["stok_masuk"];
+    $harga_masuk = $data["harga_masuk"];
+
+    $query = "UPDATE $table SET kd_barang='$kode_barang',
+    harga_masuk = '$harga_masuk',
+    stok_masuk = '$stok_masuk'
+    WHERE kd_pengadaan='$kode_pengadaan' AND kd_barang = '$kode_barang'";
 
     return mysqli_query($conn, $query);
 
