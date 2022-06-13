@@ -1,3 +1,10 @@
+<?php 
+   session_start();
+
+   if (!isset($_SESSION['username']) && !isset($_SESSION['password']) && !isset($_SESSION['type'])) {
+     return header('Location: login', true);
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,10 +29,10 @@
   <div class="wrapper">
 
     <!-- Preloader -->
-    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+    <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
       <h3 class="mt-3">By Rhafael Bijaksana</h3>
-    </div> -->
+    </div>
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -34,16 +41,13 @@
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="index.php" class="nav-link">Home</a>
-        </li>
       </ul>
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-            <i class="fas fa-expand-arrows-alt"></i>
+           <a class="nav-link"  href="logout" role="button">
+            Logout
           </a>
         </li>
       </ul>
@@ -66,7 +70,9 @@
             <img src="dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="/index.php" class="d-block">Administrator</a>
+            <a href="index" class="d-block">
+              <?= $_SESSION['username']; ?>
+            </a>
           </div>
         </div>
 
@@ -111,53 +117,6 @@
               </ul>
             </li>
 
-            <li class="nav-item menu">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-shopping-cart"></i>
-                <p>
-                  Data Transaksi
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-edit nav-icon"></i>
-                    <p>Peminjaman</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item menu">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-print"></i>
-                <p>
-                  Data Laporan
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-users nav-icon"></i>
-                    <p>Anggota</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-book nav-icon"></i>
-                    <p>Buku</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-edit nav-icon"></i>
-                    <p>Peminjaman</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
