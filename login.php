@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['username']) && isset($_SESSION['password']) && isset($_SESSION['type'])) {
+if (isset($_SESSION['username']) && isset($_SESSION['password']) && isset($_SESSION['type']) && !isset($_GET['message']) && !isset($_GET['messageType'])) {
     return header('Location: index', true);
 }
 require 'functions.php';
@@ -20,7 +20,6 @@ if (isset($_POST['submit'])) {
 
 
     // Jika ditemukan 
-    session_start();
     $_SESSION['username'] = $result['username'];
     $_SESSION['password'] = $result['password'];
     $_SESSION['type'] = $result['type'];
