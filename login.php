@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['username']) && isset($_SESSION['password']) && !isset($_GET['message']) && !isset($_GET['messageType'])) {
+if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
     return header('Location: index', true);
 }
 require 'functions.php';
@@ -15,15 +15,17 @@ if (isset($_POST['submit'])) {
 
     // Jika tidak ditemukan
     if ($result == null) {
-        return header("Location: $PATH?messageType=error&message=Account+Tidak+Ditemukan");
+        echo "<script>alert('Account tidak ditemukan!!!. Mungkin username/password yang dimasukan salah')</script>";
+    } else {
+        // Jika ditemukan 
+        $_SESSION['username'] = $result['username'];
+        $_SESSION['password'] = $result['password'];
+
+        echo "<script>alert('Berhasil Login!!!'); window.location = 'index'</script>";
     }
 
 
-    // Jika ditemukan 
-    $_SESSION['username'] = $result['username'];
-    $_SESSION['password'] = $result['password'];
 
-    return header("Location: $PATH?messageType=success&message=Berhasil+Login");
 }
 
 ?>
@@ -57,29 +59,6 @@ if (isset($_POST['submit'])) {
                             <h1 class="h5">Login to your account</h1>
                         </div>
                         <div class="card-body">
-                            <?php
-                            if (isset($_GET['message']) && isset($_GET['messageType'])) :
-                            ?>
-                                <div class="alert alert-<?= ($_GET['messageType'] == "error") ? "danger" : "success"  ?>" role="alert">
-                                    <?= $_GET['message']; ?>.
-                                    <?php
-                                    if ($_GET['messageType'] == "success") :
-                                    ?>
-                                        Akan berpindah kehalaman dashboard dalam <span id="messageDetik">3</span> detik
-                                        <script>
-                                            let idx = 2;
-                                            const updateStatus = setInterval((detik) => {
-                                                document.getElementById('messageDetik').textContent = idx--;
-                                            }, 1000, 2);
-                                            setTimeout(() => {
-                                                clearInterval(updateStatus);
-                                                window.location = 'index';
-                                            }, 3000)
-                                        </script>
-                                    <?php endif; ?>
-                                </div>
-
-                            <?php endif; ?>
                             <div class="form-group">
                                 <label for="InputUsername1">Username</label>
                                 <input name="username" required type="text" class="form-control" id="InputUsername1" aria-describedby="UsernameHelp">
