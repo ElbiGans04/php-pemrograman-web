@@ -10,10 +10,6 @@
     Require all denied
 </Files>
 
-<FilesMatch "\.(png|jpg|js|json|css|map)$">
-    Require all denied
-</FilesMatch>
-
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
