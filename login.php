@@ -92,7 +92,6 @@ if (isset($_POST['submit'])) {
                         </div>
                         <div class="card-footer">
                             <button name="submit" type="submit" class="btn btn-primary">Login</button>
-                            <p class="my-3">belum mempunyai akun ? <a href="register">klik disini</a> untuk daftar</p>
                         </div>
                     </form>
                 </div>
