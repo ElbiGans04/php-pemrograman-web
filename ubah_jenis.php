@@ -6,9 +6,9 @@ $tb_jenis = detailData("tb_jenis", "kd_jenis", $_GET['kode_jenis']);
 
 if (isset($_POST["submit"])) {
   if (ubah($_POST, "tb_jenis")) {
-    echo "<script>alert('Data berhasil diubah !!'); window.location = 'tampil_jenis.php'</script>";
+    echo "<script>alert('Data berhasil diubah !!'); window.location = 'tampil_jenis'</script>";
   } else {
-    echo "<script>alert('Data gagal diubah !!'); window.location = 'tampil_jenis.php'</script>";
+    echo "<script>alert('Data gagal diubah !!'); window.location = 'tampil_jenis'</script>";
   }
 }
 
@@ -27,7 +27,7 @@ if (isset($_POST["submit"])) {
         </div>
         <div class="col sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
             <li class="breadcrumb-item active">Halaman Jenis</li>
           </ol>
         </div>

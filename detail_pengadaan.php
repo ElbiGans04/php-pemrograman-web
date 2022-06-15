@@ -20,7 +20,7 @@ $data2 = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_p
                 </div>
                 <div class="col sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index">Home</a></li>
                         <li class="breadcrumb-item active">Halaman Detail Pengadaan Barang</li>
                     </ol>
                 </div>
@@ -41,7 +41,7 @@ $data2 = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_p
 
                         <div class="card-body">
                             <div class="card-body">
-                                <a href="tambah_pengadaan_detail.php?kode_pengadaan=<?= $data1['kd_pengadaan'] ?>" class="btn btn-block btn-primary"> Tambah Data Pengadaan Detail </a>
+                                <a href="tambah_pengadaan_detail?kode_pengadaan=<?= $data1['kd_pengadaan'] ?>" class="btn btn-block btn-primary"> Tambah Data Pengadaan Detail </a>
                                 <table id="example1" class="table table-bordered table-hover mt-3">
                                     <thead>
                                         <tr>
@@ -63,8 +63,8 @@ $data2 = detailDataRelationship("tb_pengadaan_header", "tb_pengadaan_header.kd_p
                                                 <td><?= $rows["stok_masuk"]; ?></td>
                                                 <td><?= number_format($rows["harga_masuk"], 0, '.', '.'); ?></td>
                                                 <td>
-                                                    <a href="ubah_pengadaan_detail.php?kode_pengadaan=<?= $rows['kd_pengadaan'] ?>&kode_barang=<?= $rows["kd_barang"]; ?>" class="btn btn-warning btn-xs">Ubah</a>
-                                                    <a href="delete_pengadaan_detail.php?kode_pengadaan=<?= $rows['kd_pengadaan'] ?>&kode_barang=<?= $rows["kd_barang"]; ?>" class="btn btn-danger btn-xs">Hapus</a>
+                                                    <a href="ubah_pengadaan_detail?kode_pengadaan=<?= $rows['kd_pengadaan'] ?>&kode_barang=<?= $rows["kd_barang"]; ?>" class="btn btn-warning btn-xs">Ubah</a>
+                                                    <a href="delete_pengadaan_detail?kode_pengadaan=<?= $rows['kd_pengadaan'] ?>&kode_barang=<?= $rows["kd_barang"]; ?>" class="btn btn-danger btn-xs">Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php

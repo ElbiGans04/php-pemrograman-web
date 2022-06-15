@@ -18,8 +18,8 @@ $result3 = mysqli_query($conn, $query3);
 
 if (mysqli_query($conn, $query) && $result3) {
   mysqli_commit($conn);
-  echo "<script>alert('Data berhasil didelete !!'); window.location = 'detail_pengadaan.php?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
+  echo "<script>alert('Data berhasil didelete !!'); window.location = 'detail_pengadaan?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
 } else {
   mysqli_rollback($conn);
-  echo "<script>alert('Data gagal didelete !!'); window.location = 'detail_pengadaan.php?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
+  echo "<script>alert('Data gagal didelete !!'); window.location = 'detail_pengadaan?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
 }

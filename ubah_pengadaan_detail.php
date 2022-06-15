@@ -24,10 +24,10 @@ if (isset($_POST["submit"])) {
   // var_dump(mysqli_query($conn, $query));
   if (mysqli_query($conn, $query) && mysqli_query($conn, $query2)) {
     mysqli_commit($conn);
-    echo "<script>alert('Data berhasil diubah !!'); window.location = 'detail_pengadaan.php?kode_pengadaan=".$_GET['kode_pengadaan']."'</script></script>";
+    echo "<script>alert('Data berhasil diubah !!'); window.location = 'detail_pengadaan?kode_pengadaan=".$_GET['kode_pengadaan']."'</script></script>";
   } else {
     mysqli_rollback($conn);
-    echo "<script>alert('Data gagal diubah !!'); window.location = 'detail_pengadaan.php?kode_pengadaan=".$_GET['kode_pengadaan']."'</script></script>";
+    echo "<script>alert('Data gagal diubah !!'); window.location = 'detail_pengadaan?kode_pengadaan=".$_GET['kode_pengadaan']."'</script></script>";
   }
 }
 
@@ -50,7 +50,7 @@ $result = mysqli_fetch_assoc($result);
         </div>
         <div class="col sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
             <li class="breadcrumb-item active">Halaman Pengadaan Detail</li>
           </ol>
         </div>

@@ -25,10 +25,10 @@ $kondisi = (count($kumpulanKodeBarang) === 0) ? [true] : array_map(function ($va
 
 if (hapus("tb_pengadaan_header", "kd_pengadaan", $_GET['kode_pengadaan']) && (array_search(false, $kondisi) ? false : true)) {
   mysqli_commit($conn);
-  echo "<script>alert('Data berhasil didelete !!'); //window.location = 'tampil_pengadaan_header.php'</script>";
+  echo "<script>alert('Data berhasil didelete !!'); //window.location = 'tampil_pengadaan_header'</script>";
 } else {
   mysqli_rollback($conn);
-  echo "<script>alert('Data gagal didelete !!'); //window.location = 'tampil_pengadaan_header.php'</script>";
+  echo "<script>alert('Data gagal didelete !!'); //window.location = 'tampil_pengadaan_header'</script>";
 }
 
 

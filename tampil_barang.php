@@ -17,7 +17,7 @@ $buku = tampilData("tb_barang");
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
             <li class="breadcrumb-item active">Halaman Barang</li>
           </ol>
         </div><!-- /.col -->
@@ -36,7 +36,7 @@ $buku = tampilData("tb_barang");
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <a href="tambah_barang.php" class="btn btn-block btn-primary"> Tambah Data Barang </a>
+              <a href="tambah_barang" class="btn btn-block btn-primary"> Tambah Data Barang </a>
               <table id="example1" class="table table-bordered table-hover mt-3">
                 <thead>
                   <tr>
@@ -58,9 +58,9 @@ $buku = tampilData("tb_barang");
                       <td><?= $rows["merk_barang"]; ?></td>
                       <td><?= $rows["stok"]; ?></td>
                       <td>
-                      <a href="detail_barang.php?kode_barang=<?= $rows['kd_barang'] ?>" class="btn btn-primary btn-xs">Tampilkan</a>
-                      <a href="ubah_barang.php?kode_barang=<?= $rows['kd_barang'] ?>" class="btn btn-warning btn-xs">Ubah</a>
-                      <a href="delete_barang.php?kode_barang=<?= $rows['kd_barang'] ?>" class="btn btn-danger btn-xs">Hapus</a>
+                      <a href="detail_barang?kode_barang=<?= $rows['kd_barang'] ?>" class="btn btn-primary btn-xs">Tampilkan</a>
+                      <a href="ubah_barang?kode_barang=<?= $rows['kd_barang'] ?>" class="btn btn-warning btn-xs">Ubah</a>
+                      <a href="delete_barang?kode_barang=<?= $rows['kd_barang'] ?>" class="btn btn-danger btn-xs">Hapus</a>
                       </td>
                     </tr>
                   <?php

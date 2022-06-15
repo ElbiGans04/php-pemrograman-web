@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
                                             }, 1000, 2);
                                             setTimeout(() => {
                                                 clearInterval(updateStatus);
-                                                window.location = 'index.php';
+                                                window.location = 'index';
                                             }, 3000)
                                         </script>
                                     <?php endif; ?>

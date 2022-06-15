@@ -17,7 +17,7 @@ $data = tampilData("tb_supplier");
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
             <li class="breadcrumb-item active">Halaman Supplier</li>
           </ol>
         </div><!-- /.col -->
@@ -36,7 +36,7 @@ $data = tampilData("tb_supplier");
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <a href="tambah_supplier.php" class="btn btn-block btn-primary"> Tambah Data Supplier </a>
+              <a href="tambah_supplier" class="btn btn-block btn-primary"> Tambah Data Supplier </a>
               <table id="example1" class="table table-bordered table-hover mt-3">
                 <thead>
                   <tr>
@@ -56,9 +56,9 @@ $data = tampilData("tb_supplier");
                       <td><?= $rows["nama_supplier"]; ?></td>
                       <td><?= $rows["alamat"]; ?></td>
                       <td>
-                      <a href="detail_supplier.php?kode_supplier=<?= $rows['kd_supplier'] ?>" class="btn btn-primary btn-xs">Tampilkan</a>
-                      <a href="ubah_supplier.php?kode_supplier=<?= $rows['kd_supplier'] ?>" class="btn btn-warning btn-xs">Ubah</a>
-                      <a href="delete_supplier.php?kode_supplier=<?= $rows['kd_supplier'] ?>" class="btn btn-danger btn-xs">Hapus</a>
+                      <a href="detail_supplier?kode_supplier=<?= $rows['kd_supplier'] ?>" class="btn btn-primary btn-xs">Tampilkan</a>
+                      <a href="ubah_supplier?kode_supplier=<?= $rows['kd_supplier'] ?>" class="btn btn-warning btn-xs">Ubah</a>
+                      <a href="delete_supplier?kode_supplier=<?= $rows['kd_supplier'] ?>" class="btn btn-danger btn-xs">Hapus</a>
                       </td>
                     </tr>
                   <?php

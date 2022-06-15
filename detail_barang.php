@@ -18,7 +18,7 @@ $data = detailDataRelationship("tb_barang", "tb_barang.kd_barang", $_GET['kode_b
                 </div>
                 <div class="col sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item"><a href="index">Home</a></li>
                         <li class="breadcrumb-item active">Halaman Barang</li>
                     </ol>
                 </div>

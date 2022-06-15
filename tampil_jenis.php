@@ -17,7 +17,7 @@ $jenis = tampilData("tb_jenis");
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
             <li class="breadcrumb-item active">Halaman Barang</li>
           </ol>
         </div><!-- /.col -->
@@ -36,7 +36,7 @@ $jenis = tampilData("tb_jenis");
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <a href="tambah_jenis.php" class="btn btn-block btn-primary"> Tambah Data Jenis </a>
+              <a href="tambah_jenis" class="btn btn-block btn-primary"> Tambah Data Jenis </a>
               <table id="example1" class="table table-bordered table-hover mt-3">
                 <thead>
                   <tr>
@@ -56,8 +56,8 @@ $jenis = tampilData("tb_jenis");
                       <td><?= $rows["kd_jenis"]; ?></td>
                       <td><?= $rows["nama_jenis"]; ?></td>
                       <td>
-                      <a href="ubah_jenis.php?kode_jenis=<?= $rows['kd_jenis'] ?>" class="btn btn-warning btn-xs">Ubah</a>
-                      <a href="delete_jenis.php?kode_jenis=<?= $rows['kd_jenis'] ?>" class="btn btn-danger btn-xs">Hapus</a>
+                      <a href="ubah_jenis?kode_jenis=<?= $rows['kd_jenis'] ?>" class="btn btn-warning btn-xs">Ubah</a>
+                      <a href="delete_jenis?kode_jenis=<?= $rows['kd_jenis'] ?>" class="btn btn-danger btn-xs">Hapus</a>
                       </td>
                     </tr>
                   <?php

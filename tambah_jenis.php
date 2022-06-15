@@ -5,9 +5,9 @@ require 'functions.php';
 
 if (isset($_POST["submit"])) {
   if (tambah($_POST, "tb_jenis")) {
-    echo "<script>alert('Data berhasil ditambahkan !!'); window.location = 'tampil_jenis.php'</script>";
+    echo "<script>alert('Data berhasil ditambahkan !!'); window.location = 'tampil_jenis'</script>";
   } else {
-    echo "<script>alert('Data gagal ditambahkan !!'); window.location = 'tampil_jenis.php'</script>";
+    echo "<script>alert('Data gagal ditambahkan !!'); window.location = 'tampil_jenis'</script>";
   }
 }
 
@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
             <li class="breadcrumb-item active">Halaman Jenis</li>
           </ol>
         </div><!-- /.col -->

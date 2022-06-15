@@ -9,9 +9,9 @@ $tb_supplier = tampilData("tb_supplier");
 if (isset($_POST["submit"])) {
   // var_dump($_POST);
   if (ubah($_POST, "tb_pengadaan_header")) {
-    echo "<script>alert('Data berhasil diubah !!'); window.location = 'tampil_pengadaan_header.php'</script></script>";
+    echo "<script>alert('Data berhasil diubah !!'); window.location = 'tampil_pengadaan_header'</script></script>";
   } else {
-    echo "<script>alert('Data gagal diubah !!'); window.location = 'tampil_pengadaan_header.php'</script></script>";
+    echo "<script>alert('Data gagal diubah !!'); window.location = 'tampil_pengadaan_header'</script></script>";
   }
 }
 
@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
         </div>
         <div class="col sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
             <li class="breadcrumb-item active">Halaman Pengadaan Header</li>
           </ol>
         </div>

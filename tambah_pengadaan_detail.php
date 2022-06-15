@@ -9,10 +9,10 @@ if (isset($_POST["submit"])) {
   $query = "UPDATE tb_barang SET stok='".($barang['stok'] + $_POST['stok_masuk'])."' WHERE kd_barang ='".$_POST['kode_barang']."'";
   if (tambah($_POST, "tb_pengadaan_detail") && mysqli_query($conn, $query)) {
     mysqli_commit($conn);
-    echo "<script>alert('Data berhasil ditambahkan !!'); window.location = 'detail_pengadaan.php?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
+    echo "<script>alert('Data berhasil ditambahkan !!'); window.location = 'detail_pengadaan?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
   } else {
     mysqli_rollback($conn);
-    echo "<script>alert('Data gagal ditambahkan !!'); window.location = 'detail_pengadaan.php?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
+    echo "<script>alert('Data gagal ditambahkan !!'); window.location = 'detail_pengadaan?kode_pengadaan=".$_GET['kode_pengadaan']."'</script>";
   }
 }
 
@@ -49,7 +49,7 @@ while ($row3 = mysqli_fetch_assoc($result3)) {
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a href="index">Home</a></li>
             <li class="breadcrumb-item active">Halaman Pengadaan Barang</li>
           </ol>
         </div><!-- /.col -->
