@@ -1,11 +1,7 @@
 <!-- Main Footer -->
 <footer class="main-footer">
-  <!-- To the right -->
-  <div class="float-right d-none d-sm-inline">
-    Made with ❤ by <strong>Rhafael Bijaksana</strong>
-  </div>
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2022.</strong>
+  <strong>Copyright &copy; 2022 By MyGudang</strong>
 </footer>
 </div>
 <!-- ./wrapper -->

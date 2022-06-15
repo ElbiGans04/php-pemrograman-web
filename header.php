@@ -11,7 +11,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sistem Informasi Peminjaman</title>
+  <title>MyGudang | Pengadaan Barang</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -31,7 +31,7 @@
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-      <h3 class="mt-3">By Rhafael Bijaksana</h3>
+      <h3 class="mt-3">By MyGudang</h3>
     </div>
 
     <!-- Navbar -->
@@ -59,7 +59,7 @@
       <!-- Brand Logo -->
       <a href="index" class="brand-link">
         <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">ELBI</span>
+        <span class="brand-text font-weight-light">MyGudang</span>
       </a>
 
       <!-- Sidebar -->
