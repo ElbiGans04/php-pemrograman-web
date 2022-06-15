@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['username']) && isset($_SESSION['password']) && isset($_SESSION['type']) && !isset($_GET['message']) && !isset($_GET['messageType'])) {
+if (isset($_SESSION['username']) && isset($_SESSION['password']) && !isset($_GET['message']) && !isset($_GET['messageType'])) {
     return header('Location: index', true);
 }
 require 'functions.php';
@@ -22,7 +22,6 @@ if (isset($_POST['submit'])) {
     // Jika ditemukan 
     $_SESSION['username'] = $result['username'];
     $_SESSION['password'] = $result['password'];
-    $_SESSION['type'] = $result['type'];
 
     return header("Location: $PATH?messageType=success&message=Berhasil+Login");
 }
